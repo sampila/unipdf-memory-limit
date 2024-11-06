@@ -198,6 +198,7 @@ func pdfFromGoImages(images []image.Image) ([]byte, error) {
 	return outBytes.Bytes(), nil
 }
 
+// printMemStats prints memory statistics into console.
 func printMemStats() {
 	var mem runtime.MemStats
 	runtime.ReadMemStats(&mem)
