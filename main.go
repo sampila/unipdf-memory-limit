@@ -175,6 +175,9 @@ func pdfFromGoImages(images []image.Image) ([]byte, error) {
 
 		// printMemStats()
 
+		// Set lazy loading to true to load the image and clean it after added into creator page.
+		// This will make memory usage more efficient.
+		pImg.SetLazy(true)
 		// scale to page width
 		pImg.ScaleToWidth(c.Width() - (margins * 2))
 		pImg.SetPos(margins, margins)
